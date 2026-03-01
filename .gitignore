@@ -5,6 +5,7 @@ build/
 .next.bak*
 .env.local
 .env.*.local
+apps/api/.env
 *.log
 .DS_Store
 .venv/
@@ -12,3 +13,4 @@ __pycache__/
 .turbo/
 .vercel/
 out/
+*.tsbuildinfo
