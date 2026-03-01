@@ -4,7 +4,7 @@
  */
 
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'https://api.frombirth.com';
+  process.env.NEXT_PUBLIC_API_URL || 'https://frombirth.onrender.com';
 
 interface RequestOptions {
   token?: string;

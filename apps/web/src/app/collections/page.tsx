@@ -26,14 +26,33 @@ const formatCurrency = (value: number) =>
     maximumFractionDigits: 2,
   }).format(value);
 
+const describeProduct = (product: Product) => {
+  const name = product.name.toLowerCase();
+
+  if (name.includes('mask')) {
+    return 'Advanced bioactive complex utilizing cellular signaling technology for intensive cosmetic recovery.';
+  }
+
+  if (name.includes('exosome')) {
+    return 'Couture science formula with peptide complexes for high-performance skin conditioning.';
+  }
+
+  if (name.includes('serum')) {
+    return 'A precision blend designed to support visible skin renewal and refined texture.';
+  }
+
+  return 'Regenerative-inspired cosmetic formulation developed for luxury ritual use.';
+};
+
 const LoadingSkeleton = () => (
   <div className="animate-pulse">
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
-      {Array.from({ length: 4 }).map((_, i) => (
-        <div key={i} className="space-y-2 md:space-y-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+      {Array.from({ length: 2 }).map((_, i) => (
+        <div key={i} className="space-y-4">
           <div className="aspect-[4/5] bg-gray-200 rounded"></div>
-          <div className="h-3 bg-gray-200 rounded w-2/3"></div>
-          <div className="h-3 bg-gray-200 rounded w-1/3"></div>
+          <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+          <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+          <div className="h-10 bg-gray-200 rounded w-full"></div>
         </div>
       ))}
     </div>
@@ -81,12 +100,15 @@ export default function Collections() {
 
   return (
     <div className="min-h-screen">
-      <section className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8">
-        <div className="mb-8 md:mb-10 text-center">
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">The Collection</h1>
-          <p className="text-fb-text-muted max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-            Curated skincare formulations combining stem cell technology with 
-            botanical extracts, designed for the discerning individual.
+      <section id="skincare" className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-16">
+        <div className="flex flex-col items-center mb-10 md:mb-16 text-center">
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-[0.2em] uppercase mb-4">
+            The Boutique
+          </h1>
+          <div className="w-12 h-px bg-fb-lilac-mid"></div>
+          <p className="text-fb-text-muted max-w-2xl mx-auto leading-relaxed text-sm md:text-base mt-5">
+            Couture science skincare shaped with advanced cosmetic actives and
+            elevated sensorial design.
           </p>
         </div>
 
@@ -97,7 +119,7 @@ export default function Collections() {
             <p className="text-fb-text-muted">No products available</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             {products.map((product) => (
               <ProductCard
                 key={product.id}
@@ -105,6 +127,8 @@ export default function Collections() {
                 price={formatCurrency(product.price)}
                 image={product.image}
                 tag={product.tag}
+                description={describeProduct(product)}
+                ctaLabel="Acquire"
                 onAddToCart={() =>
                   addItem({
                     productId: product.id,
@@ -116,6 +140,15 @@ export default function Collections() {
                 }
               />
             ))}
+          </div>
+        )}
+
+        {!loading && products.length > 0 && (
+          <div className="mt-14 md:mt-20 p-6 md:p-8 border border-dashed border-fb-lilac-mid/30 text-center">
+            <p className="text-[10px] uppercase tracking-widest text-gray-500 italic leading-relaxed">
+              Regenerative-inspired cosmetic skincare only. No live stem cells,
+              and no therapeutic or disease treatment claims.
+            </p>
           </div>
         )}
       </section>

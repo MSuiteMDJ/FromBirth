@@ -117,7 +117,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 **Production (replace with secure backend):**
 ```env
-NEXT_PUBLIC_API_URL=https://api.frombirth.com
+NEXT_PUBLIC_API_URL=https://frombirth.onrender.com
 ```
 
 ## Migration to Production

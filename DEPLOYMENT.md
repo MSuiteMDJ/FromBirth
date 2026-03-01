@@ -94,7 +94,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3011
 
 ### Production (Supabase)
 ```env
-NEXT_PUBLIC_API_URL=https://api.frombirth.com
+NEXT_PUBLIC_API_URL=https://frombirth.onrender.com
 NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=xxxx
 SUPABASE_SERVICE_ROLE_KEY=xxxx

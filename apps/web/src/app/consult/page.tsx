@@ -35,17 +35,18 @@ export default function Consult() {
               Institute
             </p>
             <h1 className="font-serif text-2xl md:text-3xl leading-tight mb-4">
-              Schedule Your Medical Consultation
+              Request a Private Medical Consultation
             </h1>
             <p className="text-sm text-fb-text-muted leading-relaxed mb-4">
-              Share your treatment interests and medical context. A member of our
-              medical care team will review your request and follow up with next
-              steps.
+              Begin with pre-consultation screening, then submit clinical details
+              for a doctor-led review by our regenerative medicine team.
             </p>
             <div className="space-y-3 text-xs text-fb-text-muted leading-relaxed">
+              <p>Step 1: pre-screening and bloodwork status.</p>
+              <p>Step 2: booking details and medical intake.</p>
               <p>Response window: within 24 hours.</p>
-              <p>All data handled with strict medical confidentiality.</p>
-              <p>FDA disclaimer applies to investigational therapies.</p>
+              <p>All health data handled with strict confidentiality.</p>
+              <p>Investigational therapy disclaimer applies.</p>
             </div>
           </aside>
 

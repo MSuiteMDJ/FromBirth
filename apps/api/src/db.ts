@@ -69,10 +69,16 @@ export interface Consultation {
   email: string;
   phone?: string;
   dateOfBirth?: string;
+  preferredConsultDate?: string;
+  preferredConsultTime?: string;
   medicalHistory?: string;
   allergies?: string;
   medications?: string;
   treatmentInterest: string;
+  clinicLocation?: string;
+  hasBloodWork?: boolean;
+  bloodWorkDate?: string;
+  canTravelToClinic?: boolean;
   termsAccepted: boolean;
   privacyAccepted: boolean;
   status: 'pending' | 'confirmed' | 'completed' | 'cancelled';

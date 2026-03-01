@@ -40,19 +40,33 @@ router.post('/', (req: Request, res: Response) => {
     email,
     phone,
     dateOfBirth,
+    preferredConsultDate,
+    preferredConsultTime,
     medicalHistory,
     allergies,
     medications,
     treatmentInterest,
+    clinicLocation,
+    hasBloodWork,
+    bloodWorkDate,
+    canTravelToClinic,
     termsAccepted,
     privacyAccepted,
   } = req.body;
 
   // Validation
-  if (!firstName || !lastName || !email) {
+  if (
+    !firstName ||
+    !lastName ||
+    !email ||
+    !phone ||
+    !preferredConsultDate ||
+    !preferredConsultTime
+  ) {
     return res.status(400).json({
       success: false,
-      error: 'Missing required fields: firstName, lastName, email',
+      error:
+        'Missing required fields: firstName, lastName, email, phone, preferredConsultDate, preferredConsultTime',
     });
   }
 
@@ -70,10 +84,18 @@ router.post('/', (req: Request, res: Response) => {
     email,
     phone: phone || undefined,
     dateOfBirth: dateOfBirth || undefined,
+    preferredConsultDate: preferredConsultDate || undefined,
+    preferredConsultTime: preferredConsultTime || undefined,
     medicalHistory: medicalHistory || undefined,
     allergies: allergies || undefined,
     medications: medications || undefined,
     treatmentInterest,
+    clinicLocation: clinicLocation || undefined,
+    hasBloodWork:
+      typeof hasBloodWork === 'boolean' ? hasBloodWork : undefined,
+    bloodWorkDate: bloodWorkDate || undefined,
+    canTravelToClinic:
+      typeof canTravelToClinic === 'boolean' ? canTravelToClinic : undefined,
     termsAccepted,
     privacyAccepted,
     status: 'pending',
