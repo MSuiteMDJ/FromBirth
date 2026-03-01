@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&family=Open+Sans:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,7 +17,7 @@
 
   body {
     @apply text-fb-text-dark;
-    font-family: Helvetica, "Open Sans", "sans-serif-light", sans-serif;
+    font-family: Helvetica, "Open Sans", Open-Sans, "sans-serif-light", sans-serif;
     background: linear-gradient(120deg, #e2d9f0, #ffffff, #f0e9f9);
     background-size: 200% 200%;
     animation: silk 28s ease infinite;
@@ -89,10 +89,6 @@
 
   .fb-product-card {
     @apply cursor-pointer;
-  }
-
-  .fb-product-card:hover {
-    /* Hover styling handled by child selectors */
   }
 
   .fb-product-card-image {
