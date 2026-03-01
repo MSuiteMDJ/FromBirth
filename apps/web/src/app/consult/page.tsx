@@ -57,6 +57,15 @@ export default function Consult() {
             />
           </div>
         </div>
+
+        <footer className="mt-12 md:mt-16 border-t border-gray-100 pt-8 md:pt-10">
+          <p className="text-[9px] leading-relaxed text-gray-500 uppercase tracking-tight max-w-3xl">
+            * Mesenchymal Stem Cell (MSC) therapy is provided under clinical
+            investigation protocols. FROM BIRTH does not claim to cure or treat
+            chronic diseases. Consultation and physician review are required to
+            determine eligibility for any cellular pathway.
+          </p>
+        </footer>
       </section>
     </div>
   );
