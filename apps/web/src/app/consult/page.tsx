@@ -27,21 +27,21 @@ export default function Consult() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-fb-lilac-soft/30 to-white">
+    <div className="min-h-screen bg-white">
       <section className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8 consult-shell">
         <div className="grid lg:grid-cols-[320px_1fr] gap-6 lg:gap-10 items-start">
           <aside className="consult-panel">
-            <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-3">
+            <p className="text-[10px] tracking-widest uppercase text-fb-text mb-3">
               Institute
             </p>
-            <h1 className="font-serif text-2xl md:text-3xl leading-tight mb-4">
+            <h1 className="text-2xl md:text-3xl font-bold tracking-widest uppercase leading-tight mb-4">
               Request a Private Medical Consultation
             </h1>
-            <p className="text-sm text-fb-text-muted leading-relaxed mb-4">
+            <p className="text-sm text-fb-text leading-relaxed mb-4">
               Begin with pre-consultation screening, then submit clinical details
               for a doctor-led review by our regenerative medicine team.
             </p>
-            <div className="space-y-3 text-xs text-fb-text-muted leading-relaxed">
+            <div className="space-y-3 text-xs text-fb-text leading-relaxed">
               <p>Step 1: pre-screening and bloodwork status.</p>
               <p>Step 2: booking details and medical intake.</p>
               <p>Response window: within 24 hours.</p>

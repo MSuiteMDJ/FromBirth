@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3010",
+    "dev:pages": "PAGES_BASE_PATH=1 next dev -p 3010",
     "build": "next build",
     "build:pages": "next build",
     "start": "next start",

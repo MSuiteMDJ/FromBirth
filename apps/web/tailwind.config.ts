@@ -16,26 +16,21 @@ const config: Config = {
     extend: {
       colors: {
         fb: {
-          lilac: {
-            light: '#e2d9f0',
-            mid: '#c7b6de',
-            dark: '#6b4d91',
-            soft: '#f3eef9',
-          },
+          lilac: '#B49BCC',
+          hitPink: '#E8B4B8',
+          hitBlue: '#B8C6E8',
           text: {
-            dark: '#1a1a1a',
-            muted: '#6a6670',
+            dark: '#2D2D2D',
+            muted: '#4A4A4A',
           },
+          offWhite: '#FAFAFA',
         },
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Montserrat', 'sans-serif'],
+        sans: ['Helvetica', 'Open Sans', 'sans-serif'],
       },
       backgroundImage: {
-        'silk-gradient': 'linear-gradient(120deg, #e2d9f0, #ffffff, #f0e9f9)',
-        'button-gradient': 'linear-gradient(to right, #c7b6de, #bda8d8)',
-        'announcement-gradient': 'linear-gradient(90deg, #d8c9ea, #c9b7df, #d8c9ea)',
+        /* removed silk gradients for minimalist direction */
       },
       backdropBlur: {
         'glass': '14px',

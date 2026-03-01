@@ -5,7 +5,7 @@ export default function ConsultationThankYou() {
     <div className="min-h-screen bg-gradient-to-b from-white via-fb-lilac-soft/30 to-white">
       <section className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
         <div className="bg-white/85 backdrop-blur-sm border border-white rounded-2xl p-10 md:p-14 text-center shadow-sm">
-          <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-3">
+          <p className="text-[10px] tracking-widest uppercase text-fb-text mb-3">
             Institute
           </p>
           <div className="mb-8">
@@ -24,8 +24,8 @@ export default function ConsultationThankYou() {
               />
             </svg>
           </div>
-          <h1 className="font-serif text-3xl md:text-4xl mb-4">Request Logged</h1>
-          <p className="text-xs md:text-sm text-fb-text-muted leading-relaxed tracking-wider max-w-md mx-auto mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-widest uppercase mb-4">Request Logged</h1>
+          <p className="text-xs md:text-sm text-fb-text leading-relaxed tracking-wider max-w-md mx-auto mb-10">
             Your clinical profile has been encrypted and sent to our medical care
             team. Expect a discreet response within 24 hours.
           </p>
@@ -37,13 +37,13 @@ export default function ConsultationThankYou() {
             </p>
           </div>
 
-          <p className="text-sm md:text-base text-fb-text-muted leading-relaxed max-w-xl mx-auto mb-8">
+          <p className="text-sm md:text-base text-fb-text leading-relaxed max-w-xl mx-auto mb-8">
             Thank you for your consultation request. One of our medical care team
             will be in touch.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="/consult" className="fb-button w-full sm:w-auto">
+            <Link href="/consult" className="fb-btn-primary w-full sm:w-auto">
               Back to Institute
             </Link>
             <Link

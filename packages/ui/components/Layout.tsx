@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className="fb-header">
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 border-2 border-fb-lilac-mid rounded-full flex items-center justify-center">
+        <div className="w-12 h-12 border-2 border-fb-lilac rounded-full flex items-center justify-center">
           <span className="text-fb-lilac-dark font-bold text-sm">FB</span>
         </div>
         <h1 className="text-lg md:text-xl font-light tracking-widest uppercase">From Birth</h1>

@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <section className="fb-hero">
       <div className="fb-hero-text">
-        <h1>Science Meets Luxury.</h1>
+        <h1 className="fb-hero-h1">Science Meets Luxury.</h1>
         <p>
           A regenerative-inspired skincare collection developed with laboratory 
           precision and presented with couture restraint.
         </p>
-        <Link href="/collections" className="fb-button">
+        <Link href="/collections" className="fb-btn-primary">
           Discover the Collection
         </Link>
       </div>

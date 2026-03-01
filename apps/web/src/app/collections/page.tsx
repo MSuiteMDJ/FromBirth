@@ -90,7 +90,7 @@ export default function Collections() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <p className="text-red-600 mb-4">⚠️ {error}</p>
-          <p className="text-sm text-fb-text-muted">
+          <p className="text-sm text-fb-text">
             Make sure the API server is running: <code>pnpm dev:api</code>
           </p>
         </div>
@@ -102,11 +102,11 @@ export default function Collections() {
     <div className="min-h-screen">
       <section id="skincare" className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-16">
         <div className="flex flex-col items-center mb-10 md:mb-16 text-center">
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-[0.2em] uppercase mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-widest uppercase mb-4">
             The Boutique
           </h1>
           <div className="w-12 h-px bg-fb-lilac-mid"></div>
-          <p className="text-fb-text-muted max-w-2xl mx-auto leading-relaxed text-sm md:text-base mt-5">
+          <p className="text-fb-text max-w-2xl mx-auto leading-relaxed text-sm md:text-base mt-5">
             Couture science skincare shaped with advanced cosmetic actives and
             elevated sensorial design.
           </p>
@@ -116,7 +116,7 @@ export default function Collections() {
           <LoadingSkeleton />
         ) : products.length === 0 ? (
           <div className="text-center py-8 md:py-12">
-            <p className="text-fb-text-muted">No products available</p>
+            <p className="text-fb-text">No products available</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
@@ -144,7 +144,7 @@ export default function Collections() {
         )}
 
         {!loading && products.length > 0 && (
-          <div className="mt-14 md:mt-20 p-6 md:p-8 border border-dashed border-fb-lilac-mid/30 text-center">
+          <div className="mt-14 md:mt-20 p-6 md:p-8 border border-dashed border-fb-lilac/30 text-center">
             <p className="text-[10px] uppercase tracking-widest text-gray-500 italic leading-relaxed">
               Regenerative-inspired cosmetic skincare only. No live stem cells,
               and no therapeutic or disease treatment claims.

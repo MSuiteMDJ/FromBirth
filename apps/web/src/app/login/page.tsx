@@ -59,11 +59,11 @@ function LoginContent() {
     <div className="min-h-screen">
       <section className="max-w-lg mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
         <div className="account-card">
-          <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-3 text-center">
+          <p className="text-[10px] tracking-widest uppercase text-fb-text mb-3 text-center">
             My Account
           </p>
-          <h1 className="font-serif text-3xl md:text-4xl mb-3 text-center">Local Demo Login</h1>
-          <p className="text-sm text-fb-text-muted text-center mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-widest uppercase mb-3 text-center">Local Demo Login</h1>
+          <p className="text-sm text-fb-text text-center mb-6">
             Sign in to view account details, appointments, and order history.
           </p>
 
@@ -97,14 +97,14 @@ function LoginContent() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="fb-button w-full justify-center"
+              className="fb-btn-primary w-full justify-center"
             >
               {isSubmitting ? 'Signing In...' : 'Sign In'}
             </button>
           </form>
 
-          <div className="mt-6 p-3 bg-fb-lilac-soft rounded border border-fb-lilac-light">
-            <p className="text-[11px] text-fb-text-muted leading-relaxed">
+          <div className="mt-6 p-3 bg-fb-off-white rounded border border-gray-200">
+            <p className="text-[11px] text-fb-text leading-relaxed">
               Demo credentials pre-filled: <strong>demo@frombirth.com</strong> /{' '}
               <strong>frombirth-demo</strong>
             </p>
@@ -118,7 +118,7 @@ function LoginContent() {
 function LoginFallback() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <p className="text-sm text-fb-text-muted">Loading login...</p>
+      <p className="text-sm text-fb-text">Loading login...</p>
     </div>
   );
 }

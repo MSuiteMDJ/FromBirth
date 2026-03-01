@@ -4,22 +4,21 @@
  */
 
 export const fbColors = {
-  // Lilac / Purple Palette
+  // Lilac / Purple Palette (now muted to single accent)
   lilac: {
-    light: "#e2d9f0",    // Main accent light
-    mid: "#c7b6de",      // Gradient/button primary
-    dark: "#6b4d91",     // Deep luxury purple
-    soft: "#f3eef9",     // Very light background tint
+    base: "#B49BCC",      // primary accent
   },
+  hitPink: "#E8B4B8",
+  hitBlue: "#B8C6E8",
   
-  // Neutral
+  // Neutral / text
   text: {
-    dark: "#1a1a1a",     // Primary text
-    muted: "#6a6670",    // Secondary text
+    dark: "#2D2D2D",     // Primary text darker
+    muted: "#4A4A4A",    // Secondary text
   },
   
   white: "#ffffff",
-  offWhite: "#fafafa",
+  offWhite: "#FAFAFA",
   
   // Utility
   border: "rgba(0, 0, 0, 0.1)",

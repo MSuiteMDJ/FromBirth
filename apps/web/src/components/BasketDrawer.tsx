@@ -58,8 +58,8 @@ export function BasketDrawer({ open, onClose }: BasketDrawerProps) {
         <div className="flex-1 overflow-y-auto px-5 py-4">
           {items.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center">
-              <p className="text-sm text-fb-text-muted mb-4">Your basket is currently empty.</p>
-              <Link href="/collections" className="fb-button" onClick={onClose}>
+              <p className="text-sm text-fb-text mb-4">Your basket is currently empty.</p>
+              <Link href="/collections" className="fb-btn-primary" onClick={onClose}>
                 Discover Collection
               </Link>
             </div>
@@ -86,13 +86,13 @@ export function BasketDrawer({ open, onClose }: BasketDrawerProps) {
                     />
                   </div>
                   <div>
-                    <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-1">
+                    <p className="text-[10px] tracking-widest uppercase text-fb-text mb-1">
                       {item.tag}
                     </p>
                     <h3 className="text-xs md:text-sm tracking-wide uppercase mb-1">
                       {item.name}
                     </h3>
-                    <p className="text-xs text-fb-text-muted mb-2">
+                    <p className="text-xs text-fb-text mb-2">
                       {formatCurrency(item.unitPrice)}
                     </p>
                     <div className="flex items-center gap-2">
@@ -112,7 +112,7 @@ export function BasketDrawer({ open, onClose }: BasketDrawerProps) {
                         +
                       </button>
                       <button
-                        className="ml-auto text-[11px] tracking-wide uppercase text-fb-text-muted"
+                        className="ml-auto text-[11px] tracking-wide uppercase text-fb-text"
                         onClick={() => removeItem(item.productId)}
                       >
                         Remove
@@ -130,7 +130,7 @@ export function BasketDrawer({ open, onClose }: BasketDrawerProps) {
             <span>Subtotal</span>
             <span>{formatCurrency(subtotal)}</span>
           </div>
-          <Link href="/basket" className="fb-button w-full text-center" onClick={onClose}>
+          <Link href="/basket" className="fb-btn-primary w-full text-center" onClick={onClose}>
             Go to Basket
           </Link>
         </div>

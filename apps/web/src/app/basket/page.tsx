@@ -24,7 +24,7 @@ export default function BasketPage() {
   if (!hasHydrated) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-fb-text-muted">Loading basket...</p>
+        <p className="text-sm text-fb-text">Loading basket...</p>
       </div>
     );
   }
@@ -33,18 +33,18 @@ export default function BasketPage() {
     <div className="min-h-screen">
       <section className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8">
         <div className="mb-8 md:mb-10">
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-widest uppercase mb-3 md:mb-4">
             Your Basket
           </h1>
-          <p className="text-sm md:text-base text-fb-text-muted">
+          <p className="text-sm md:text-base text-fb-text">
             Review items from your collection selection.
           </p>
         </div>
 
         {items.length === 0 ? (
           <div className="text-center py-16 bg-white/70 rounded-xl border border-white">
-            <p className="text-sm text-fb-text-muted mb-4">Your basket is empty.</p>
-            <Link href="/collections" className="fb-button">
+            <p className="text-sm text-fb-text mb-4">Your basket is empty.</p>
+            <Link href="/collections" className="fb-btn-primary">
               Explore Collection
             </Link>
           </div>
@@ -73,13 +73,13 @@ export default function BasketPage() {
                   </div>
 
                   <div>
-                    <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-1">
+                    <p className="text-[10px] tracking-widest uppercase text-fb-text mb-1">
                       {item.tag}
                     </p>
                     <h2 className="text-sm md:text-base tracking-wide uppercase mb-1">
                       {item.name}
                     </h2>
-                    <p className="text-sm text-fb-text-muted mb-3">
+                    <p className="text-sm text-fb-text mb-3">
                       {formatCurrency(item.unitPrice)}
                     </p>
                     <div className="flex items-center gap-2">
@@ -99,7 +99,7 @@ export default function BasketPage() {
                         +
                       </button>
                       <button
-                        className="ml-auto text-[11px] tracking-wide uppercase text-fb-text-muted hover:text-black"
+                        className="ml-auto text-[11px] tracking-wide uppercase text-fb-text hover:text-black"
                         onClick={() => removeItem(item.productId)}
                       >
                         Remove
@@ -118,11 +118,11 @@ export default function BasketPage() {
                 <span>Subtotal</span>
                 <span>{formatCurrency(subtotal)}</span>
               </div>
-              <p className="text-xs text-fb-text-muted mb-6">
+              <p className="text-xs text-fb-text mb-6">
                 Shipping and taxes are calculated at checkout.
               </p>
               <button
-                className="fb-button w-full justify-center mb-3 opacity-70 cursor-not-allowed"
+                className="fb-btn-primary w-full justify-center mb-3 opacity-70 cursor-not-allowed"
                 disabled
               >
                 Checkout (Demo)

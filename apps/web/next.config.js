@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/FromBirth' : '';
+const forcePagesBasePath = process.env.PAGES_BASE_PATH === '1';
+const basePath = isProduction || forcePagesBasePath ? '/FromBirth' : '';
 
 const nextConfig = {
   reactStrictMode: true,

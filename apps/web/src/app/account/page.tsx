@@ -125,7 +125,7 @@ export default function AccountPage() {
   if (!hasHydrated || (!isAuthenticated && !error)) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-fb-text-muted">Loading account...</p>
+        <p className="text-sm text-fb-text">Loading account...</p>
       </div>
     );
   }
@@ -133,7 +133,7 @@ export default function AccountPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-fb-text-muted">Preparing your account dashboard...</p>
+        <p className="text-sm text-fb-text">Preparing your account dashboard...</p>
       </div>
     );
   }
@@ -143,7 +143,7 @@ export default function AccountPage() {
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="max-w-md text-center">
           <p className="text-red-700 mb-3">{error || 'Unable to load account data.'}</p>
-          <Link href="/login?redirect=/account" className="fb-button">
+          <Link href="/login?redirect=/account" className="fb-btn-primary">
             Back to Login
           </Link>
         </div>
@@ -155,11 +155,11 @@ export default function AccountPage() {
     <div className="min-h-screen">
       <section className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8 space-y-6">
         <header className="account-card">
-          <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-2">
+          <p className="text-[10px] tracking-widest uppercase text-fb-text mb-2">
             My Account
           </p>
-          <h1 className="font-serif text-3xl md:text-4xl mb-2">Welcome back, {customerName}</h1>
-          <p className="text-sm text-fb-text-muted">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-widest uppercase mb-2">Welcome back, {customerName}</h1>
+          <p className="text-sm text-fb-text">
             Review your profile, appointments, and order progress.
           </p>
           <button
@@ -196,19 +196,19 @@ export default function AccountPage() {
               Appointments Due
             </h2>
             {viewModel.appointments.due.length === 0 ? (
-              <p className="text-sm text-fb-text-muted">No appointments due in the next 30 days.</p>
+              <p className="text-sm text-fb-text">No appointments due in the next 30 days.</p>
             ) : (
               <div className="space-y-3">
                 {viewModel.appointments.due.map((appointment) => (
                   <article key={appointment.id} className="border border-gray-200 rounded p-3">
-                    <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-1">
+                    <p className="text-[10px] tracking-widest uppercase text-fb-text mb-1">
                       {appointment.status}
                     </p>
                     <h3 className="text-sm font-medium">{appointment.service}</h3>
-                    <p className="text-xs text-fb-text-muted">
+                    <p className="text-xs text-fb-text">
                       {formatDate(appointment.scheduledDate)} • {appointment.location}
                     </p>
-                    <p className="text-xs text-fb-text-muted">
+                    <p className="text-xs text-fb-text">
                       Clinician: {appointment.clinician}
                     </p>
                   </article>
@@ -222,16 +222,16 @@ export default function AccountPage() {
               Appointments History
             </h2>
             {viewModel.appointments.history.length === 0 ? (
-              <p className="text-sm text-fb-text-muted">No past appointments yet.</p>
+              <p className="text-sm text-fb-text">No past appointments yet.</p>
             ) : (
               <div className="space-y-3">
                 {viewModel.appointments.history.map((appointment) => (
                   <article key={appointment.id} className="border border-gray-200 rounded p-3">
-                    <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-1">
+                    <p className="text-[10px] tracking-widest uppercase text-fb-text mb-1">
                       {appointment.status}
                     </p>
                     <h3 className="text-sm font-medium">{appointment.service}</h3>
-                    <p className="text-xs text-fb-text-muted">
+                    <p className="text-xs text-fb-text">
                       {formatDate(appointment.scheduledDate)} • {appointment.location}
                     </p>
                   </article>
@@ -247,19 +247,19 @@ export default function AccountPage() {
               Orders Processing
             </h2>
             {viewModel.orders.processing.length === 0 ? (
-              <p className="text-sm text-fb-text-muted">No processing orders at the moment.</p>
+              <p className="text-sm text-fb-text">No processing orders at the moment.</p>
             ) : (
               <div className="space-y-3">
                 {viewModel.orders.processing.map((order) => (
                   <article key={order.id} className="border border-gray-200 rounded p-3">
-                    <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-1">
+                    <p className="text-[10px] tracking-widest uppercase text-fb-text mb-1">
                       {order.status}
                     </p>
                     <h3 className="text-sm font-medium">Order #{order.id.slice(0, 8)}</h3>
-                    <p className="text-xs text-fb-text-muted">
+                    <p className="text-xs text-fb-text">
                       Updated {formatDate(order.updatedAt)}
                     </p>
-                    <p className="text-xs text-fb-text-muted">
+                    <p className="text-xs text-fb-text">
                       Total {formatCurrency(order.total)}
                     </p>
                   </article>
@@ -273,19 +273,19 @@ export default function AccountPage() {
               Past Orders
             </h2>
             {viewModel.orders.history.length === 0 ? (
-              <p className="text-sm text-fb-text-muted">No past orders yet.</p>
+              <p className="text-sm text-fb-text">No past orders yet.</p>
             ) : (
               <div className="space-y-3">
                 {viewModel.orders.history.map((order) => (
                   <article key={order.id} className="border border-gray-200 rounded p-3">
-                    <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-1">
+                    <p className="text-[10px] tracking-widest uppercase text-fb-text mb-1">
                       {order.status}
                     </p>
                     <h3 className="text-sm font-medium">Order #{order.id.slice(0, 8)}</h3>
-                    <p className="text-xs text-fb-text-muted">
+                    <p className="text-xs text-fb-text">
                       Updated {formatDate(order.updatedAt)}
                     </p>
-                    <p className="text-xs text-fb-text-muted">
+                    <p className="text-xs text-fb-text">
                       Total {formatCurrency(order.total)}
                     </p>
                   </article>

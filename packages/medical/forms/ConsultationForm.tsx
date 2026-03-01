@@ -56,7 +56,7 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
   const [bloodWorkDeclared, setBloodWorkDeclared] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const inputClass =
-    'w-full px-0 py-2.5 text-sm bg-transparent border-0 border-b border-gray-300 rounded-none focus:outline-none focus:ring-0 focus:border-fb-lilac-mid';
+    'w-full px-0 py-2.5 text-sm bg-transparent border-0 border-b border-gray-300 rounded-none focus:outline-none focus:ring-0 focus:border-fb-lilac';
   const selectClass = `${inputClass} appearance-none`;
 
   const handleChange = (
@@ -172,13 +172,13 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
   return (
     <div className="max-w-none mx-auto py-4 md:py-6 lg:py-8">
       <div className="mb-4 md:mb-6">
-        <p className="text-[10px] tracking-widest uppercase text-fb-text-muted mb-2">
+        <p className="text-[10px] tracking-widest uppercase text-fb-text mb-2">
           Private Consultation
         </p>
-        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-3">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-widest uppercase mb-2 md:mb-3\">\n
           Regenerative Institute Booking
         </h2>
-        <p className="text-sm md:text-base text-fb-text-muted leading-relaxed">
+        <p className="text-sm md:text-base text-fb-text leading-relaxed">
           Complete screening first, then submit your confidential consultation
           request to our medical care team.
         </p>
@@ -188,7 +188,7 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
         <span
           className={`px-3 py-1 rounded-full border ${
             step === 1
-              ? 'bg-fb-lilac-soft border-fb-lilac-mid'
+              ? 'bg-fb-off-white border-fb-lilac'
               : 'bg-white border-gray-200'
           }`}
         >
@@ -197,7 +197,7 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
         <span
           className={`px-3 py-1 rounded-full border ${
             step === 2
-              ? 'bg-fb-lilac-soft border-fb-lilac-mid'
+              ? 'bg-fb-off-white border-fb-lilac'
               : 'bg-white border-gray-200'
           }`}
         >
@@ -223,12 +223,12 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
             <span
               className={`relative inline-flex h-9 w-9 items-center justify-center rounded-full border text-xs tracking-widest ${
                 step === 1
-                  ? 'border-fb-lilac-mid bg-fb-lilac-soft'
+                  ? 'border-fb-lilac bg-fb-off-white'
                   : 'border-gray-300 bg-white'
               }`}
             >
               {step === 1 && (
-                <span className="absolute inset-0 rounded-full border border-fb-lilac-mid animate-pulse"></span>
+                <span className="absolute inset-0 rounded-full border border-fb-lilac animate-pulse"></span>
               )}
               1
             </span>
@@ -243,12 +243,12 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
             <span
               className={`relative inline-flex h-9 w-9 items-center justify-center rounded-full border text-xs tracking-widest ${
                 step === 2
-                  ? 'border-fb-lilac-mid bg-fb-lilac-soft'
+                  ? 'border-fb-lilac bg-fb-off-white'
                   : 'border-gray-300 bg-white'
               }`}
             >
               {step === 2 && (
-                <span className="absolute inset-0 rounded-full border border-fb-lilac-mid animate-pulse"></span>
+                <span className="absolute inset-0 rounded-full border border-fb-lilac animate-pulse"></span>
               )}
               2
             </span>
@@ -266,7 +266,7 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
             transition={{ duration: 0.35, ease: 'easeOut' }}
             className="space-y-6"
           >
-            <p className="text-sm leading-relaxed text-center italic text-fb-text-muted">
+            <p className="text-sm leading-relaxed text-center italic text-fb-text">
               Regenerative therapy remains under clinical investigation. Doctor-led
               consultation helps determine suitability before any treatment
               pathway is considered.
@@ -276,7 +276,7 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
               <h3 className="text-xs font-semibold tracking-widest uppercase mb-4">
                 Initial Requirements
               </h3>
-              <ul className="text-xs text-fb-text-muted space-y-3">
+              <ul className="text-xs text-fb-text space-y-3">
                 <li className="flex justify-between border-b border-gray-100 pb-2">
                   <span>Clinical Setting</span>
                   <span className="font-medium">Licensed Facility</span>
@@ -394,7 +394,7 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
             <button
               type="button"
               onClick={handleContinue}
-              className="fb-button w-full justify-center"
+              className="fb-btn-primary w-full justify-center"
             >
               Continue to Booking Details
             </button>
@@ -571,11 +571,11 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
               </legend>
 
               <div className="space-y-4">
-                <div className="bg-fb-lilac-soft p-4 rounded border border-fb-lilac-light">
+                <div className="bg-fb-off-white p-4 rounded border border-gray-200">
                   <h4 className="text-sm font-semibold mb-3">
                     Medical Disclaimer
                   </h4>
-                  <p className="text-xs text-fb-text-muted leading-relaxed mb-3">
+                  <p className="text-xs text-fb-text leading-relaxed mb-3">
                     Mesenchymal Stem Cell therapy is investigational.
                     Information provided by FROM BIRTH is for consultation and
                     education only and is not a guarantee of diagnosis,
@@ -598,7 +598,7 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
 
                 <div className="bg-blue-50 p-4 rounded border border-blue-200">
                   <h4 className="text-sm font-semibold mb-3">Privacy Consent</h4>
-                  <p className="text-xs text-fb-text-muted leading-relaxed mb-3">
+                  <p className="text-xs text-fb-text leading-relaxed mb-3">
                     Your personal and health information is collected only for
                     medical screening and consultation coordination by licensed
                     team members.
@@ -634,12 +634,12 @@ export const MedicalConsultationForm: React.FC<MedicalConsultationFormProps> = (
               <button
                 type="submit"
                 disabled={isLoading}
-                className="fb-button w-full sm:flex-1 justify-center"
+                className="fb-btn-primary w-full sm:flex-1 justify-center"
               >
                 {isLoading ? 'Submitting...' : 'Request Consultation'}
               </button>
             </div>
-            <p className="text-xs text-fb-text-muted text-center mt-1">
+            <p className="text-xs text-fb-text text-center mt-1">
               One of our medical care team will review your request and contact
               you with next steps.
             </p>
