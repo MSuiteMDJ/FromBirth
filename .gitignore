@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+.next/
+.next.bak*
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.venv/
+__pycache__/
+.turbo/
+.vercel/
+out/

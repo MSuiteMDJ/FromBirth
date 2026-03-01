@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root */
+@layer base {
+  html, body {
+    @apply overflow-x-hidden;
+    height: 100%;
+  }
+
+  #__next {
+    @apply flex flex-col min-h-screen;
+  }
+
+  body {
+    @apply font-sans text-fb-text-dark;
+    background: linear-gradient(120deg, #e2d9f0, #ffffff, #f0e9f9);
+    background-size: 200% 200%;
+    animation: silk 28s ease infinite;
+  }
+
+  /* Silk gradient animation */
+  @keyframes silk {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Editorial grain overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.25;
+    z-index: 50;
+  }
+}
+
+/* Components */
+@layer components {
+  .fb-header {
+    @apply fixed top-0 w-full h-[85px] flex justify-between items-center px-4 md:px-[8%];
+    @apply z-[1000] backdrop-blur-glass relative;
+    background: rgba(255, 255, 255, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  }
+
+  .fb-nav-link {
+    @apply text-xs font-medium tracking-widest uppercase text-fb-text-dark;
+    @apply transition-opacity duration-300 hover:opacity-90;
+  }
+
+  .fb-button {
+    @apply inline-block px-9 py-[14px] rounded-full;
+    @apply text-xs font-medium tracking-widest uppercase;
+    @apply bg-button-gradient text-white;
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .fb-announcement {
+    @apply absolute top-[85px] w-full text-center py-2 md:py-3;
+    @apply text-[10px] md:text-xs tracking-widest uppercase;
+    background: linear-gradient(90deg, #d8c9ea, #c9b7df, #d8c9ea);
+  }
+
+  .fb-hero {
+    @apply flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 px-4 md:px-[8%] py-6 md:py-8;
+  }
+
+  .fb-hero-text {
+    @apply max-w-sm md:max-w-[520px];
+  }
+
+  .fb-hero-text h1 {
+    @apply font-serif text-3xl md:text-5xl lg:text-[58px] leading-tight mb-3 md:mb-4;
+  }
+
+  .fb-hero-text p {
+    @apply text-sm md:text-base leading-relaxed text-fb-text-muted mb-4 md:mb-6;
+  }
+
+  .fb-product-card {
+    @apply cursor-pointer;
+  }
+
+  .fb-product-card:hover {
+    /* Hover styling handled by child selectors */
+  }
+
+  .fb-product-card-image {
+    @apply aspect-[4/5] overflow-hidden bg-[#f9f9f9] mb-2 md:mb-3 relative;
+  }
+
+  .fb-product-card-image img {
+    @apply object-cover w-full h-full;
+    @apply group-hover:scale-105 transition-transform duration-700;
+  }
+
+  .fb-product-tag {
+    @apply absolute top-2 md:top-3 left-2 md:left-3 bg-white/80 backdrop-blur-sm;
+    @apply px-2 md:px-3 py-1 text-[8px] md:text-[10px] tracking-widest uppercase;
+  }
+
+  .fb-product-title {
+    @apply text-xs md:text-sm font-medium tracking-wide md:tracking-widest uppercase line-clamp-2;
+  }
+
+  .fb-product-price {
+    @apply text-xs md:text-sm text-gray-500 mt-1;
+  }
+
+  .fb-product-button {
+    @apply mt-2 md:mt-3 w-full border border-black py-1.5 md:py-2;
+    @apply text-[10px] md:text-xs tracking-widest uppercase;
+    @apply transition-all duration-300;
+    @apply hover:bg-black hover:text-white;
+  }
+
+  /* Legacy-inspired announcement shimmer */
+  .fb-announcement::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -70%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: fb-shimmer 10s ease-in-out infinite;
+  }
+
+  @keyframes fb-shimmer{
+    0%{ left:-70%; }
+    40%{ left:120%; }
+    100%{ left:120%; }
+  }
+
+  /* Refined luxury button hover to match legacy look */
+  .fb-button:hover{
+    transform: translateY(-4px) !important;
+    box-shadow: 0 14px 35px rgba(188,169,214,0.5) !important;
+  }
+
+  /* Hero image float and soft radial glow */
+  .fb-hero-image{
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+  }
+
+  .fb-hero-image::before{
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(197,181,222,0.45) 0%, rgba(255,255,255,0) 70%);
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .fb-hero-image img{
+    position: relative;
+    z-index: 2;
+    max-height: 72vh;
+    transition: transform 0.3s ease;
+    animation: fb-float 7s ease-in-out infinite;
+  }
+
+  @keyframes fb-float{
+    0%{transform:translateY(0px);} 
+    50%{transform:translateY(-12px);} 
+    100%{transform:translateY(0px);} 
+  }
+
+  .consult-shell {
+    @apply mt-1 md:mt-2;
+  }
+
+  .consult-panel {
+    @apply bg-white/75 backdrop-blur-sm border border-white rounded-2xl p-5 md:p-6 lg:sticky lg:top-[140px];
+  }
+
+  .consult-form-wrap {
+    @apply bg-white/85 backdrop-blur-sm border border-white rounded-2xl px-4 md:px-6;
+  }
+
+  .account-card {
+    @apply bg-white/85 backdrop-blur-sm border border-white rounded-2xl p-5 md:p-6 shadow-sm;
+  }
+
+  .basket-summary {
+    @apply bg-white/85 backdrop-blur-sm border border-white rounded-2xl p-5 md:p-6 shadow-sm;
+  }
+}
+
+/* Utilities - removed letter-spacing utility, use tracking-widest instead */
